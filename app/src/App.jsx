@@ -1,31 +1,35 @@
-import {Routes, Route } from "react-router";
-import { useeffect, useState } from 'react';
-import Home from './Home.jsx';
-import Recipes from './Recipes.jsx';
-import Profile from './Profile.jsx';
-import Search from './Search.jsx';
-import Search from './Search.jsx';
-import Favorites from './Favorites.jsx'
-import Blog from './Blog.jsx'
-import '../styles/App.css';
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { useEffect, useState } from "react";
+
+import Home from "./Home.jsx";
+import Recipes from "./Recipes.jsx";
+import Profile from "./Profile.jsx";
+import Search from "./Search.jsx";
+import Favorites from "./Favorites.jsx";
+import Blog from "./Blog.jsx";
 
 import "../styles/App.css";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    // Example effect (optional)
+    console.log("App mounted");
+  }, []);
 
   return (
-    <>
+    <Router>
       <Routes>
         <Route path="/" element={<Home />} /> 
-        <Route path="/" element={<Recipes />} /> 
-        <Route path="/" element={<Profile />} />
-        <Route path="/" element={< Search/>} />
-        <Route path="/" element={<Favorites />} />
-        <Route path="/" element={<Blog />} />
+        <Route path="/recipes" element={<Recipes />} /> 
+        <Route path="/profile" element={<Profile />} />
+        <Route path="/search" element={<Search />} />
+        <Route path="/favorites" element={<Favorites />} />
+        <Route path="/blog" element={<Blog />} />
       </Routes>
-    </>
-  )
+    </Router>
+  );
 }
 
-export default App
+export default App;
