@@ -11,11 +11,19 @@ app.get("/", (req, res) => {
 app.get("/users", (req, res) => {
     knex("users")
         .select("*")
-        .then( data => res.status(200).json(data))
+        .then( data => {
+          return res.status(200).json(data)
+        })
         .catch(err => {
             console.error(err)
             res.status(500).json({error:"failed to fetch users"});
         })
+})
+
+app.get("/recipes", (req, res) => {
+    knex("recipes")
+        .select("*")
+        .then( data => res.status(200).json(data));
 })
 
 app.listen(port, () => {
