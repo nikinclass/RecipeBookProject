@@ -2,7 +2,7 @@ const express = require("express");
 const app = express();
 const port = 8080;
 
-app.get("/", (res, req) => {
+app.get("/", (req, res) => {
   res.send(`Express listening on port: ${port}`);
 });
 
