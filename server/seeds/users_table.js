@@ -6,15 +6,17 @@ const { faker } = require("@faker-js/faker");
 exports.seed = async function(knex) {
   // Deletes ALL existing entries
   await knex('users').del()
-  await knex('users').insert([
-      for (let i  = 0; i < 1000; i++){
-          return {
-              name:
-          }
+  let usersArray = [];
+      for (let i  = 1; i < 1000; i++){
+          usersArray.push( {
+              name: faker.person.fullName(),
+              email: faker.internet.email(),
+              role: 'admin'
+          })
       }
-      {name: 'Alec RECIPE', email: 'alec_something@email.com', role: 'admin'},
-      {name: 'monkey', email: 'primate@email.com', role: 'admin'},
-      {name: 'michael', email: 'michael@email.com', role: 'admin'},
-      {name: 'jesse ventura', email: 'jesse@email.com', role: 'admin'}
-  ]);
+      // {name: 'Alec RECIPE', email: 'alec_something@email.com', role: 'admin'},
+      // {name: 'monkey', email: 'primate@email.com', role: 'admin'},
+      // {name: 'michael', email: 'michael@email.com', role: 'admin'},
+      // {name: 'jesse ventura', email: 'jesse@email.com', role: 'admin'}
+    await knex('users').insert(usersArray);
 };
