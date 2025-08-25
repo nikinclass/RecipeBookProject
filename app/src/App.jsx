@@ -16,11 +16,13 @@ function App() {
   const [count, setCount] = useState(0);
 
   return (
+
     <Router>
+
       <Navbar />
       <Routes>
-        <Route path="/" element={<Home />} /> 
-        <Route path="/recipes" element={<Recipes />} /> 
+        <Route path="/" element={<Home />} />
+        <Route path="/recipes" element={<Recipes />} />
         <Route path="/profile" element={<Profile />} />
         <Route path="/search" element={<Search />} />
         <Route path="/favorites" element={<Favorites />} />

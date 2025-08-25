@@ -1,14 +1,14 @@
-import { render, screen } from '@testing-library/react'
-import renderer from 'react-test-renderer';
-import '@testing-library/dom'
-import '@testing-library/jest-dom'
+import { describe, it } from "vitest";
+import { render, screen } from '@testing-library/react';
+import { BrowserRouter as Router } from "react-router-dom";
+import userEvent from '@testing-library/user-event'
 import App from '../src/App'
 import Navbar from '../components/Navbar'
 
-test('renders all navigation links', () => {
-  render ( <App /> ) 
+it('renders all navigation links', () => {
+  render(<App/>)
   // const links=[
-  //   'Recipes', 
+  //   'Recipes',
   //   'Profile',
   //   'Search',
   //   'Favorites',
