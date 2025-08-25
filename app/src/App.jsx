@@ -16,8 +16,7 @@ function App() {
 
   return (
     <Router>
-      <Navbar></Navbar>
-      <Home></Home>
+      <Navbar />
       <Routes>
         <Route path="/" element={<Home />} /> 
         <Route path="/recipes" element={<Recipes />} /> 
@@ -27,7 +26,7 @@ function App() {
         <Route path="/blog" element={<Blog />} />
       </Routes>
     </Router>
-  ); 
+  );
 }
 
 export default App;
