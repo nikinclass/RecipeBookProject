@@ -5,9 +5,15 @@
     position: fixed;
     top: 0;
     left: 0;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    /* box-shadow: 0 2px 5px rgba(0,0,0,0.2); */
     width: 100%;
     z-index: 1000;
+    padding: 10px;
+    gap: 20px;
+    /* border-style: solid;
+    border-width: medium; */
+    /* border-color: rgb(17, 37, 54); */
+    /* background: rgb(59, 53, 53); */
 }
 .logo {
     height: 50px;
