@@ -13,11 +13,6 @@ import "../styles/App.css";
 function App() {
   const [count, setCount] = useState(0);
 
-  useEffect(() => {
-    // Example effect (optional)
-    console.log("App mounted");
-  }, []);
-
   return (
     <Router>
       <Routes>
