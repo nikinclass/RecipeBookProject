@@ -2,11 +2,11 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { useEffect, useState } from "react";
 
 import Home from "./Home.jsx";
-// import Recipes from "./Recipes.jsx";
-// import Profile from "./Profile.jsx";
-// import Search from "./Search.jsx";
-// import Favorites from "./Favorites.jsx";
-// import Blog from "./Blog.jsx";
+import Recipes from "./Recipes.jsx";
+import Profile from "./Profile.jsx";
+import Search from "./Search.jsx";
+import Favorites from "./Favorites.jsx";
+import Blog from "./Blog.jsx";
 import '../styles/App.css'
 import Navbar from '../components/Navbar.jsx'
 
