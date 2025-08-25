@@ -1,10 +1,10 @@
 const express = require("express");
 const app = express();
-const knex = require('knex')(require("./knexfile.js")["development"]);
+const knex = require('knex')(require("./knexfile.js")["docker"]);
 const port = 8080;
 
 app.get("/", (req, res) => {
-  res.send(`Express listening on port: ${port} TEST`);
+  res.send(`Express listening on port: ${port}`);
 });
 
 app.get("/users", (req, res) => {
