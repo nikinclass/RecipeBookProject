@@ -2,10 +2,18 @@ const express = require("express");
 const app = express();
 const knex = require("knex")(require("./knexfile.js")["docker"]);//If testing endpoints, environment must be the 'test' environment from the knex file
 const port = 8080;
+app.use(express.json())
+// app.use(express.urlencoded({ extended: true }));
 
 app.get("/", (req, res) => {
   res.send(`Express listening on port: ${port}`);
+  console.log(req.body);
 });
+
+app.post("/", (req, res) => {
+    console.log(req.body);
+    res.status(200);
+})
 
 app.get("/users", (req, res) => {
   knex("users")

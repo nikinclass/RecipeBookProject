@@ -8,7 +8,18 @@ export default function Account(){
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    fetch('http://localhost:8080/')
+    const submitData = {
+        "email": e.target[0].value,
+        "password": e.target[1].value
+    }
+    const headers = {
+        "Content-Type" : "application/json"
+    }
+    fetch('http://localhost:8080/', {
+        method: "POST",
+        headers: headers,
+        body: JSON.stringify(submitData),
+    })
       .then(res => {
         if(res.status == 401){
           setValidCredentials(false);
