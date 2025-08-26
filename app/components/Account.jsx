@@ -12,14 +12,14 @@ export default function Account(){
         "email": e.target[0].value,
         "password": e.target[1].value
     }
-    const headers = {
-        "Content-Type" : "application/json",
-        "Accept" : "application/json"
-    }
+    // const headers = {
+    //     "Content-Type" : "application/json",
+    //     "Accept" : "application/json"
+    // }
     fetch('http://localhost:8080/', {
         "method": "POST",
-        "headers": headers,
-        "body": JSON.stringify(submitData),
+        // "headers": headers,
+        "body": {data: submitData},
     })
       .then(res => {
         if(res.status == 401){
