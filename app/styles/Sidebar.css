@@ -1,0 +1,26 @@
+.flex-container {
+  display: flex;
+  min-height: 100vh;
+}
+
+.sidebar {
+  background-color: antiquewhite;
+  position: sticky;
+  width: 30%;
+  max-width: 300px;
+  scrollbar-highlight-color: lightblue;
+  min-height: auto;
+  margin: 5%;
+  border: .2em solid black;
+  flex-basis:200px;
+  flex-grow:0;
+  flex-shrink:0;
+
+}
+
+#sidebar-content {
+  flex-basis: auto;
+  flex-grow: 1;
+  flex-shrink: 1;
+  padding: 20px;
+}
