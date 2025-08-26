@@ -1,5 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
+import '../styles/Account.css'
 
 export default function Account(){
   const [validCredentials, setValidCredentials ] = useState(true);
@@ -27,33 +28,38 @@ export default function Account(){
 
   if( createAccount ){
     return (
-      <form onSubmit={(e)=>{ handleSubmit(e) }}>
+      <form className="account-form" onSubmit={(e)=>{ handleSubmit(e) }}>
         <h2>Account Creation</h2>
         <label htmlFor="email">Email Address</label>
         <input type="email" name="" id="verify_email" placeholder="example@example.com" />
         <label htmlFor="verify_email">Confirm Email</label>
-        <input type="email" name="" id="email" placeholder="example@example.com" />
+        <input type="email" name="" id="email" placeholder="example@example.com" /><br />
         <label htmlFor="password">Password</label>
         <input type="password" name="" id="password" placeholder="password"/>
         <label htmlFor="verify_password">Confirm Password</label>
-        <input type="password" name="" id="verify_password" placeholder="confirm"/>
-        <button type="submit" value="login">Create Account</button>
-        <button type="button" onClick={()=>{ handleCancel() }}>Cancel</button>
+        <input type="password" name="" id="verify_password" placeholder="confirm"/><br />
+        <div>
+          <button type="submit" value="login">Create Account</button>
+          <button type="button" onClick={()=>{ handleCancel() }}>Cancel</button>
+        </div>
         <p>Returning user? <a onClick={()=>{setCreateAccount(false)}}>login</a></p>
       </form>
     )
   }
 
   return (
-    <form onSubmit={(e)=>{ handleSubmit(e) }}>
+    <form className="account-form" onSubmit={(e)=>{ handleSubmit(e) }}>
+      <h2>User Login</h2>
       <label htmlFor="email">Email Address {
         validCredentials ? "" : <span>Invalid email/password</span>
       }</label>
-      <input type="email" name="" id="email" placeholder="example@example.com" />
+      <input type="email" name="" id="email" placeholder="example@example.com" /><br />
       <label htmlFor="password">Password</label>
-      <input type="password" name="" id="password" placeholder="********"/>
-      <button type="submit" value="login">Login</button>
-      <button type="button" onClick={()=>{ handleCancel() }}>Cancel</button>
+      <input type="password" name="" id="password" placeholder="********"/><br />
+      <div>
+        <button type="submit" value="login">Login</button><br />
+        <button type="button" onClick={()=>{ handleCancel() }}>Cancel</button>
+      </div>
       <p>New user? <a onClick={()=>{setCreateAccount(true)}}>create account</a></p>
     </form>
   )
