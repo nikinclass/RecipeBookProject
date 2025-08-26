@@ -39,7 +39,7 @@
   }
   
   .blog-post {
-    background-color: #3b3b3b;
+    background-color: rgb(0, 30, 0);;
     padding: 20px;
     border-radius: 10px;
   }
@@ -58,7 +58,7 @@
   /* Sidebar */
   .sidebar {
     flex: 1; /* takes up 1/4 of the width */
-    background-color: #3b3b3b;
+    background-color: rgb(0, 30, 0);;
     padding: 50px;
     border-radius: 20px;
     height: fit-content;
