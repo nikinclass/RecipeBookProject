@@ -1,6 +1,6 @@
 const express = require("express");
 const app = express();
-const knex = require("knex")(require("./knexfile.js")["test"]);//If testing endpoints, environment must be the 'test' environment from the knex file
+const knex = require("knex")(require("./knexfile.js")["docker"]);//If testing endpoints, environment must be the 'test' environment from the knex file
 const port = 8080;
 
 app.get("/", (req, res) => {
@@ -17,6 +17,7 @@ app.get("/users", (req, res) => {
       console.error(err);
       res.status(500).json({ error: "failed to fetch users" });
     });
+
 });
 
 app.get("/recipes", (req, res) => {

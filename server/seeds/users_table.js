@@ -11,7 +11,8 @@ exports.seed = async function(knex) {
           usersArray.push( {
               name: faker.person.fullName(),
               email: faker.internet.email(),
-              role: 'admin'
+              role: 'admin',
+              password: 'password'
           })
       }
       // {name: 'Alec RECIPE', email: 'alec_something@email.com', role: 'admin'},
