@@ -1,6 +1,7 @@
  const request = require("supertest");
 const app = require("../app.js");
 
+
 describe("Test the root path", () => {
   test("It should response the GET method", () => {
     return request(app)
@@ -12,8 +13,14 @@ describe("Test the root path", () => {
 });
 
 describe("Test the users path", () => {
-  test("It should response the GET method", async () => {
-    const response = await request(app).get("/users");
-    expect(response.statusCode).toBe(200);
+  test("It should get a response the GET method", (done) => {
+    request(app)
+        .get('/users')
+        .expect(200)
+        .expect('Content-Type', /json/)
+        .end( (err, res) => {
+            if (err) return done(err);
+            return done();
+        })
   });
 });
