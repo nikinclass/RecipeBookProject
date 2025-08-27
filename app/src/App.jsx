@@ -11,17 +11,12 @@ import '../styles/App.css'
 import Navbar from '../components/Navbar.jsx'
 import Account from "../components/Account.jsx";
 
-
-
-
 function App() {
   const [count, setCount] = useState(0);
-  const [isOpen, setIsOpen] = useState(true);
 
   return (
     <Router>
       <Navbar />
-      <Sidebar isOpen={isOpen} setIsOpen={setIsOpen} />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/recipes" element={<Recipes />} />
