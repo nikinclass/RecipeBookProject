@@ -32,19 +32,7 @@ app.get("/recipes", (req, res) => {
         .then((data) => res.status(200).json(data));
 });
 
-app.get('/login', (req, res) =>{
-    knex('users')
-        .select("*")
-        .then( userArray => {
-            for (let user of userArray) {
-                if (req.body.email.toLowerCase() === user.email.toLowerCase()){
-                    res.status(200).send("User validated")
-                    return;
-                }
-            }
-            res.status(400).send('No user exists')
-        })
-})
+
 
 app.post("/users", (req, res) => {
     knex('users')
