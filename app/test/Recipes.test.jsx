@@ -1,4 +1,3 @@
-
 import { describe, expect, it, beforeEach, afterEach } from "vitest";
 import { render, screen } from "@testing-library/react";
 import Recipes from "../src/Recipes";
