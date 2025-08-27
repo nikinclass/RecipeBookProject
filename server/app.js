@@ -13,6 +13,39 @@ app.get("/", (req, res) => {
   console.log(req.body);
 });
 
+app.get("/users", (req, res) => {
+    knex("users")
+        .select("*")
+        .then((data) => {
+            return res.status(200).json(data);
+        })
+        .catch((err) => {
+            console.error(err);
+            res.status(500).json({ error: "failed to fetch users" });
+        });
+
+});
+
+app.get("/recipes", (req, res) => {
+    knex("recipes")
+        .select("*")
+        .then((data) => res.status(200).json(data));
+});
+
+app.get('/login', (req, res) =>{
+    knex('users')
+        .select("*")
+        .then( userArray => {
+            for (let user of userArray) {
+                if (req.body.email.toLowerCase() === user.email.toLowerCase()){
+                    res.status(200).send("User validated")
+                    return;
+                }
+            }
+            res.status(400).send('No user exists')
+        })
+})
+
 app.post("/users", (req, res) => {
     knex('users')
         .select("*")
@@ -37,24 +70,7 @@ app.post("/users", (req, res) => {
         })
 })
 
-app.get("/users", (req, res) => {
-  knex("users")
-    .select("*")
-    .then((data) => {
-      return res.status(200).json(data);
-    })
-    .catch((err) => {
-      console.error(err);
-      res.status(500).json({ error: "failed to fetch users" });
-    });
 
-});
-
-app.get("/recipes", (req, res) => {
-  knex("recipes")
-    .select("*")
-    .then((data) => res.status(200).json(data));
-});
 
 module.exports = app.listen(port, () => {
   console.log(`Express listening on port: ${port}`);
