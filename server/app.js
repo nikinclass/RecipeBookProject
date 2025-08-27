@@ -1,5 +1,4 @@
 const express = require("express");
-const bodyParser = require("body-parser");
 const app = express();
 const knex = require("knex")(require("./knexfile.js")["docker"]); //If testing endpoints, environment must be the 'test' environment from the knex file
 const port = 8080;
