@@ -105,6 +105,7 @@ export default function Recipes () {
             {reviews.map((review, index) => (
               <div className='review' key={index}>
                 <p><strong>Rating: {review.rating}/5</strong></p>
+                <p>{review.text}</p>
                 </div>
             ))}
           </div>
