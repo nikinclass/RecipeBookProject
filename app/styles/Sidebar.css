@@ -1,26 +1,51 @@
-.flex-container {
-  display: flex;
-  min-height: 100vh;
+.sidebar-wrapper {
+  position: relative;
+  max-width: 170px;
+  grid-area: side;
 }
 
 .sidebar {
-  background-color: antiquewhite;
-  position: sticky;
-  width: 30%;
-  max-width: 300px;
+  background-color: rgba(180, 235, 180, 0.3);
+  position: relative;
+  display: flex;
   scrollbar-highlight-color: lightblue;
   min-height: auto;
   margin: 5%;
-  border: .2em solid black;
-  flex-basis:200px;
-  flex-grow:0;
-  flex-shrink:0;
+  border-radius: 1em;
+  flex-wrap: wrap;
+  flex-direction: column;
+  text-align: left;
+  max-width: 170px;
+
 
 }
 
-#sidebar-content {
-  flex-basis: auto;
-  flex-grow: 1;
-  flex-shrink: 1;
-  padding: 20px;
+.sidebar a {
+  display: block;
+  text-decoration: none;
+  color: rgb(0, 30, 0);
+  width: 95%;
+  padding: 0.5em;
+  border-radius: 1em;
 }
+
+.sidebar a:hover {
+  cursor: pointer;
+  background-color: rgba(255, 255, 255, 0.7);
+}
+
+.sidebar-collapse {
+  transform: rotate(90deg);
+  padding-top: 2px;
+  position: absolute;
+  top: 4px;
+  border-top-left-radius: .25em;
+  border-top-right-radius: .25em;
+  right: -10px;
+  background-color: rgba(160, 215, 160, 0.7);
+}
+
+.sidebar-collapse:hover {
+  cursor: pointer;
+}
+
