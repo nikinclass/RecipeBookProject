@@ -9,7 +9,8 @@ import Favorites from "./Favorites.jsx";
 import Blog from "./Blog.jsx";
 import '../styles/App.css'
 import Navbar from '../components/Navbar.jsx'
-import Sidebar from '../components/Sidebar.jsx'
+import Account from "../components/Account.jsx";
+
 
 
 
@@ -18,7 +19,6 @@ function App() {
   const [isOpen, setIsOpen] = useState(true);
 
   return (
-
     <Router>
       <Navbar />
       <Sidebar isOpen={isOpen} setIsOpen={setIsOpen} />
@@ -29,6 +29,7 @@ function App() {
         <Route path="/search" element={<Search />} />
         <Route path="/favorites" element={<Favorites />} />
         <Route path="/blog" element={<Blog />} />
+        <Route path="/login" element={<Account />} />
       </Routes>
     </Router>
   );
