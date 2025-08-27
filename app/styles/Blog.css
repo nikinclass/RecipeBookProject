@@ -42,6 +42,8 @@
     background-color: rgba(62, 156, 62);;
     padding: 20px;
     border-radius: 10px;
+    position:absolute;
+    right: 200px;
   }
   
   .blog-post .post-title {
