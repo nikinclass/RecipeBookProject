@@ -1,4 +1,16 @@
 services:
+
+  frontend:
+    build: app/
+    image: react-app
+    container_name: react-container
+    volumes:
+      - "./app:/src/app"
+      - "/src/app/node_modules"
+    ports:
+      - "5173:5173"
+
+
   backend:
     build: server/
     image: "api-server"

@@ -1,4 +1,5 @@
 .home {
+  grid-area: main-content;
   display: grid;
   grid-template-columns: 1fr 9fr;
   grid-template-areas: 'side main';

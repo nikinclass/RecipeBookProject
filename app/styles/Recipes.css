@@ -1,9 +1,19 @@
-.recipes-container  {
+/* .recipes-container  {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
     padding: 20px;
+} */
+
+.recipes-container {
+    grid-area: main-content;
 }
+
+.recipesTitle{
+    display: block;
+    margin: 10px;
+    margin-top: 50px;
+ }
 
 .left-section{
     flex: 1;
@@ -33,3 +43,4 @@
     margin: 20px 0;
     border-radius: 8px;
 }
+

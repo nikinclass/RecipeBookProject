@@ -17,6 +17,7 @@ export default function Navbar() {
         <Link to='/search'>Search </Link>
         <Link to='/favorites'>Favorites </Link>
         <Link to='/blog'>Blog </Link>
+        <Link to='/login'>Login/Create Account</Link>
       </div>
     </nav>
   )

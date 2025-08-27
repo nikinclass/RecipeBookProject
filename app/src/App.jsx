@@ -9,16 +9,14 @@ import Favorites from "./Favorites.jsx";
 import Blog from "./Blog.jsx";
 import '../styles/App.css'
 import Navbar from '../components/Navbar.jsx'
-
+import Account from "../components/Account.jsx";
 
 function App() {
   const [count, setCount] = useState(0);
 
   return (
-
     <Router>
       <Navbar />
-      
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/recipes" element={<Recipes />} />
@@ -26,6 +24,7 @@ function App() {
         <Route path="/search" element={<Search />} />
         <Route path="/favorites" element={<Favorites />} />
         <Route path="/blog" element={<Blog />} />
+        <Route path="/login" element={<Account />} />
       </Routes>
     </Router>
   );
