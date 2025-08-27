@@ -1,0 +1,19 @@
+.profileContainer {
+    display: flex;
+    align-items: flex-start; /* Align content at the top */
+    justify-content: flex-start; /* Align to the left */
+    gap: 20px; /* Space between image and text */
+    padding: 20px;
+    margin-top: -450px; /* Push it below the navbar */
+    position: relative; /* No need for absolute */
+    left: 0px;
+  }
+  
+  .userPfp {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%; /* Circular image */
+    object-fit: cover;
+    border: 3px solid #ccc;
+  }
+  

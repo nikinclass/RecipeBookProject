@@ -1,14 +1,14 @@
 .favoritesSection {
-    display: flex;
-    justify-content: center;
-    margin-top: 30px;
-  }
+  display: flex;
+  justify-content: center;
+  margin-top: 80px; 
+}
+
   
   .photoCard {
     display: flex;
     gap: 20px;
-    flex-wrap: wrap; /* Stacks on small screens */
-    border: 1px solid #ccc;
+    flex-wrap:nowrap; 
     border-radius: 10px;
     padding: 10px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
@@ -29,6 +29,8 @@
   }
   
   .photoDescription {
-    color: #555;
+    color: #9f9a9a;
+    font-weight: bold;
+    
   }
   

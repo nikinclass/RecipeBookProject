@@ -14,9 +14,20 @@ export default function Recipes () {
       </div>
       
       <div className='right-Section'>
+
+      <aside className="sidebar">
       <h3 className="instructionsTitle">instructions</h3>
       <input type='checkbox' className='recipeCheckbox' name='recipeCheckbox' value='recipe'/>
       <label for='checkbox1'>lorem</label>
+      <input type='checkbox' className='recipeCheckbox' name='recipeCheckbox' value='recipe'/>
+      <label for='checkbox2'>pourem</label>
+      <input type='checkbox' className='recipeCheckbox' name='recipeCheckbox' value='recipe'/>
+      <label for='checkbox3'>scorem</label>
+      <input type='checkbox' className='recipeCheckbox' name='recipeCheckbox' value='recipe'/>
+      <label for='checkbox4'>forem</label>
+      <input type='checkbox' className='recipeCheckbox' name='recipeCheckbox' value='recipe'/>
+      <label for='checkbox5'>torem</label>
+      </aside>
       {/* <p className="instructionsDesc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus, molestiae consequuntur. Nobis vero voluptatem modi perspiciatis deleniti vel, veniam architecto repudiandae sint nostrum nisi molestiae officia numquam quidem earum pariatur!</p> */}
 
       <img className='ChefPic' 
