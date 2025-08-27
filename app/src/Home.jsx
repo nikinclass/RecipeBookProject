@@ -6,12 +6,12 @@ import AppContext from './AppContext'
 
 export default function Home (){
   const [view, setView] = useState('default');
-  const {recipes} = useContext(AppContext);
-  const [featured, setFeatured] = useState(null);
+  const {recipes, featured, setFeatured} = useContext(AppContext);
+
 
   useEffect(() => {
     setFeatured(recipes[0])
-  }, recipes)
+  }, [recipes])
 
   return (
     <div className='home'>

@@ -15,6 +15,7 @@ import Account from "../components/Account.jsx";
 function App() {
   const [count, setCount] = useState(0);
   const [recipeList, setRecipeList] = useState([]);
+  const [featured, setFeatured] = useState(null);
 
   useEffect(() => {
     fetch('http://localhost:8080/recipes') 
@@ -25,11 +26,11 @@ function App() {
         return response.json();
       }
     })
-    .then()
+    .then(data => setRecipeList(data))
   }, [])
 
   return (
-    <AppContext.Provider value={{recipes:recipeList}}>
+    <AppContext.Provider value={{recipes:recipeList, featured: featured, setFeatured: setFeatured}}>
       <Router>
         <Navbar />
         <Routes>

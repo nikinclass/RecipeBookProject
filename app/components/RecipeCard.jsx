@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'; 
 export default function RecipeCard({recipe, isFeatured}){
   const {name, desc, img_url} = recipe;
   return (
@@ -5,7 +6,7 @@ export default function RecipeCard({recipe, isFeatured}){
         <h2>{name}</h2>
         <p>{desc}</p>
         <img src={img_url} alt={name}/>
-        {isFeatured ? <button>Cook Now</button> : <></>}
+        {isFeatured ? <Link to='/recipes'><button>Cook Now</button></Link> : <></>}
     </div>
   )
 }
