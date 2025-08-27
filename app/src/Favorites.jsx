@@ -11,7 +11,7 @@ export default function Favorites() {
             src="https://www.kroger.com/product/images/xlarge/front/0007066201003"
             alt="Photo 1"
           />
-          <p className="photoDescription">This cool</p>
+          <p className="photoDescription">Favorite Image</p>
         </div>
 
         {/* Second Image */}
