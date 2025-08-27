@@ -4,7 +4,12 @@
     align-items: flex-start;
     padding: 20px;
 } */
- .recipesTitle{
+
+.recipes-container {
+    grid-area: main-content;
+}
+
+.recipesTitle{
     display: block;
     margin: 10px;
     margin-top: 50px;
