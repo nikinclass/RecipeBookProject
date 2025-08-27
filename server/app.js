@@ -37,17 +37,17 @@ app.get("/users/:id", (req, res) => {
     .then((user) => res.status(200).json(user));
 });
 
-// app.get("/blog-post", (req, res) => {
-//   knex("blog_posts")
-//     .select("*")
-//     .then((data) => {
-//       res.status(200).json(data);
-//     })
-//     .catch((err) => {
-//       console.error(err);
-//       res.status(500).json({ error: "failed to fetch users" });
-//     });
-// });
+app.get("/blog-posts", (req, res) => {
+  knex("blog_posts")
+    .select("*")
+    .then((data) => {
+      res.status(200).json(data);
+    })
+    .catch((err) => {
+      console.error(err);
+      res.status(500).json({ error: "failed to fetch users" });
+    });
+});
 
 app.get("/recipes", (req, res) => {
   knex("recipes")
