@@ -12,6 +12,12 @@ app.get("/", (req, res) => {
   console.log(req.body);
 });
 
+// user = {
+//   userid: id,
+//   email: email,
+//   favorites: [fav, fav, fav]
+// }
+
 app.get("/users", (req, res) => {
   knex("users")
     .select("*")
@@ -24,10 +30,38 @@ app.get("/users", (req, res) => {
     });
 });
 
+app.get("/users/:id", (req, res) => {
+  const { id } = req.params;
+  knex("users")
+    .select("*")
+    .where("id", id)
+    .then((user) => res.status(200).json(user));
+});
+
+// app.get("/blog-post", (req, res) => {
+//   knex("blog_posts")
+//     .select("*")
+//     .then((data) => {
+//       res.status(200).json(data);
+//     })
+//     .catch((err) => {
+//       console.error(err);
+//       res.status(500).json({ error: "failed to fetch users" });
+//     });
+// });
+
 app.get("/recipes", (req, res) => {
   knex("recipes")
     .select("*")
     .then((data) => res.status(200).json(data));
+});
+
+app.get("/recipes/:id", (req, res) => {
+  const { id } = req.params;
+  knex("recipes")
+    .select("*")
+    .where("id", id)
+    .then((recipe) => res.status(200).json(recipe[0].name));
 });
 
 app.post("/users", (req, res) => {
