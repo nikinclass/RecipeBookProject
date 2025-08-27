@@ -10,7 +10,7 @@ export default function Account(){
     e.preventDefault();
     const submitData = {
         "email": e.target[0].value,
-        "password": e.target[1].value
+        "password": e.target[2].value
     }
     const headers = {
         "Content-Type" : "application/json",

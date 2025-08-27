@@ -14,8 +14,27 @@ app.get("/", (req, res) => {
 });
 
 app.post("/users", (req, res) => {
-    console.log(req.body)
-    res.status(200).send("Connected");
+    knex('users')
+        .select("*")
+        .then( userArray => {
+            for (let user of userArray) {
+                if (req.body.email.toLowerCase() === user.email.toLowerCase()){
+                    res.status(401).send("User already exists")
+                    return;
+                }
+            }
+            knex('users')
+                .insert({
+                    name: "default",
+                    email: req.body.email,
+                    role: 'admin',
+                    password: req.body.password
+                })
+                .catch((err) => {
+                    if (err) console.log(err);
+                })
+            res.status(200)
+        })
 })
 
 app.get("/users", (req, res) => {
