@@ -70,6 +70,7 @@ app.post("/users", (req, res) => {
       for (let user of userArray) {
         if (req.body.email.toLowerCase() === user.email.toLowerCase()) {
           res.status(401).send("User already exists");
+          console.log(req.headers["create-account"]);
           return;
         }
       }
