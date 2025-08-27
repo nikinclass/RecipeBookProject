@@ -12,21 +12,21 @@ export default function Account(){
         "email": e.target[0].value,
         "password": e.target[1].value
     }
-    // const headers = {
-    //     "Content-Type" : "application/json",
-    //     "Accept" : "application/json"
-    // }
-    fetch('http://localhost:8080/', {
+    const headers = {
+        "Content-Type" : "application/json",
+        "Accept" : "application/json"
+    }
+    fetch('http://localhost:8080/users', {
         "method": "POST",
-        // "headers": headers,
-        "body": {data: submitData},
+        "headers": headers,
+        "body": JSON.stringify(submitData)
     })
       .then(res => {
         if(res.status == 401){
           setValidCredentials(false);
         } else if(res.status == 200){
           setValidCredentials(true);
-          navigate('/');
+          // navigate('/');
         }
       })
       .catch(err => console.error(err));
