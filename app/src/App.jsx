@@ -9,17 +9,19 @@ import Favorites from "./Favorites.jsx";
 import Blog from "./Blog.jsx";
 import '../styles/App.css'
 import Navbar from '../components/Navbar.jsx'
+import Sidebar from '../components/Sidebar.jsx'
 
 
 
 function App() {
   const [count, setCount] = useState(0);
+  const [isOpen, setIsOpen] = useState(true);
 
   return (
 
     <Router>
-
       <Navbar />
+      <Sidebar isOpen={isOpen} setIsOpen={setIsOpen} />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/recipes" element={<Recipes />} />
