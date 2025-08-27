@@ -1,11 +1,12 @@
 import Sidebar from '../components/Sidebar'
-import { useState, useContext } from 'react'
+import { useState, useEffect, useContext } from 'react'
 import '../styles/Home.css'
 import RecipeCard from '../components/RecipeCard';
+import AppContext from './AppContext'
 
 export default function Home (){
   const [view, setView] = useState('default');
-  const {recipes} = useContext('AppContext');
+  const {recipes} = useContext(AppContext);
   const [featured, setFeatured] = useState(null);
 
   useEffect(() => {
