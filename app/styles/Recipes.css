@@ -38,4 +38,27 @@
     margin: 20px 0;
     border-radius: 8px;
 }
-
+.Recipesidebar {
+    position: fixed;
+    top: 55px; /* under navbar */
+    left: 0;
+    width: 200px;
+    height: 100%;
+    padding: 15px;
+    background-color: rgba(240, 240, 240, 0.8); /* Light translucent background */
+    color: rgba(0, 0, 0, 0.85); /* Dark text with slight transparency */
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .Recipesidebar a {
+    display: block;
+    margin-bottom: 10px;
+    text-decoration: none;
+    color: rgba(0, 0, 0, 0.8);
+    transition: color 0.2s ease;
+  }
+  
+  .Recipesidebar a:hover {
+    color: rgba(255, 255, 255, 0.9); /* Green with transparency */
+  }
+  
