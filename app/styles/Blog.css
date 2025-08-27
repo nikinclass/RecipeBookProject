@@ -32,14 +32,14 @@
   
   /* Main posts column */
   .main-posts {
-    flex: 3; /* takes up 3/4 of the width */
+    flex: 3; 
     display: flex;
     flex-direction: column;
     gap: 40px;
   }
   
   .blog-post {
-    background-color: rgb(0, 30, 0);;
+    background-color: rgba(62, 156, 62);;
     padding: 20px;
     border-radius: 10px;
   }
@@ -58,7 +58,7 @@
   /* Sidebar */
   .sidebar {
     flex: 1; /* takes up 1/4 of the width */
-    background-color: rgb(0, 30, 0);;
+    background-color: rgba(43, 128, 43);;
     padding: 50px;
     border-radius: 20px;
     height: fit-content;
