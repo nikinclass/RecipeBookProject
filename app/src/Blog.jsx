@@ -31,7 +31,7 @@ return (
 
     {/* side bar content */}
 
-    <aside className="sidebar">
+   <div className='sidebar'>
     <h3>Recent Posts</h3>
     <ul>
         <li>Alec's Recipie</li>
@@ -41,7 +41,7 @@ return (
         <li>Micha's Cake Recipie</li>
         <li>Taco Recipie</li>
     </ul>
-    </aside>
+    </div>
 
     </div>
 </div>
