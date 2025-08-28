@@ -16,7 +16,7 @@ export default function Account() {
     };
     const headers = {
       "Content-Type": "application/json",
-      Accept: "application/json",
+      Accept: "*/*",
       "create-account": createAccount ? "true" : "false",
     };
     fetch("http://localhost:8080/users", {
@@ -29,6 +29,7 @@ export default function Account() {
           setValidCredentials(false);
         } else if (res.status == 200) {
           setValidCredentials(true);
+
           navigate("/");
         }
       })
