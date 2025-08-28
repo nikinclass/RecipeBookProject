@@ -1,3 +1,4 @@
+const { login } = require('./utils/helperFunctions.js')
 const express = require("express");
 const app = express();
 const knex = require("knex")(require("./knexfile.js")["docker"]); //If testing endpoints, environment must be the 'test' environment from the knex file
@@ -11,11 +12,6 @@ app.get("/", (req, res) => {
   console.log(req.body);
 });
 
-// user = {
-//   userid: id,
-//   email: email,
-//   favorites: [fav, fav, fav]
-// }
 
 app.get("/users", (req, res) => {
   knex("users")
