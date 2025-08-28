@@ -52,7 +52,6 @@ export function randomFoodCategory() {
 export function login(req, res) {
   var opts = {
     maxAge: 900000,
-    expires: 0,
     httpOnly: true,
     sameSite: "strict",
   };
@@ -65,10 +64,8 @@ export function login(req, res) {
           req.body.password.toLowerCase() === user.password.toLowerCase()
         ) {
           console.log("Access Granted");
-          return res
-            .status(200)
-            .cookie("email", req.body.email, opts)
-            .send("Access Granted");
+          res.cookie("email", req.body.email, opts);
+          return res.status(200).send();
         }
       }
       console.log("Access Denied");
