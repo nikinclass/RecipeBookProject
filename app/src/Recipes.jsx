@@ -2,19 +2,15 @@ import '../styles/Recipes.css';
 import { useEffect, useState, useContext } from 'react'
 import { useParams } from 'react-router-dom';
 import AppContext from './AppContext';
+import { getName, getPicture, getInstructions } from '../utils/utils'
 
 export default function Recipes () {
   const [rating, setRating] = useState(0);
   const [hover, setHover] = useState(0);
   const [reviewText, setReviewText] = useState('');
   const [reviews, setReviews] = useState([]);
-  const [recipe, setRecipe] = useState(null);
-  const { id } = useParams();
   const { recipes, featured } = useContext(AppContext);
-
-  useEffect(()=>{
-    id >= 0 ? setRecipe(recipes[id]) : setRecipe(featured);
-  },[id])
+  const { id } = useParams();
 
   const handleStarClick = (value) => {
     setRating(value);
@@ -38,37 +34,24 @@ export default function Recipes () {
   };
 
   const getStarClass = (index) =>{
-    if ((hover || rating) >= index) {
-      return 'selected';
-    }
+    if ((hover || rating) >= index) { return 'selected' };
     return '';
-    };
+  };
+
+  if ( recipes.length <= 0 ){return <div className="recipes-container">Loading</div>}
 
   return(
     <div className='recipes-container'>
 
       <div className='left section'>
-        <h1 className="recipesTitle">Recipes</h1>
-        <img
-        className="recepieImg"
-        src="https://media.tenor.com/wy2zHeWyf2gAAAAe/side-eye-dog-suspicious-look.png"
-        alt="image of recepie"/>
+        <h1 className="recipesTitle">{getName(id, recipes[id], featured)}</h1>
+        <img className="recepieImg" src={getPicture(id, recipes[id], featured)} alt={getName(id, recipes[id], featured)}/>
       </div>
 
       <div className='right-section'>
         <div className='instructions-card'>
-          <h3 className="instructionsTitle">instructions</h3>
-          {['lorem', 'pourem', 'scorem', 'forem', 'torem'].map((item, index) =>(
-            <div key={index} className='checkbox-item'>
-              <input
-              type='checkbox'
-              id={`checkbox${index + 1}`}
-              className='recipeCheckbox'
-              name='recipeCheckbox'
-              value={item} />
-              <label htmlFor={`checkbox${index + 1}`}>{item}</label>
-            </div>
-          ))}
+          <h3 className="instructionsTitle">Instructions</h3>
+          <p>{getInstructions(id, recipes[id], featured)}</p>
         </div>
         <img className='ChefPic'
         src='https://i.pinimg.com/564x/ae/31/62/ae316256daf28f5ed4a8be128d4c4ec7.jpg'
@@ -79,7 +62,6 @@ export default function Recipes () {
 
     <div className='reviews-section'>
       <h2>Reveiws</h2>
-      {/* ratings */}
       <div className='rating-container'>
         <div className='rating'><span>{rating}</span>/5</div>
         <div className='stars'>
@@ -95,15 +77,13 @@ export default function Recipes () {
           ))}
         </div>
       </div>
-      {/* reveiws */}
+
       <p>Share your review</p>
       <textarea
         value={reviewText}
         onChange={(e) => setReviewText(e.target.value)}
         placeholder='Write your reveiw here' />
       <button onClick={handleSubmit}>Submit</button>
-
-      {/* display reviews */}
 
       <div className='reviews'>
         {reviews.map((review, index) => (
