@@ -45,7 +45,7 @@ export async function getAllRecipes() {
 }
 
 export function randomFoodCategory() {
-  const categories = ["breakfast", "lunch", "dinner", "desert", "drink"];
+  const categories = ["breakfast", "lunch", "dinner", "dessert", "drink"];
   return categories[Math.floor(Math.random() * categories.length)];
 }
 
