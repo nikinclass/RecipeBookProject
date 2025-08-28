@@ -26,8 +26,8 @@ export function randomFoodCategory() {
     return categories[Math.floor(Math.random() * categories.length)]
 }
 
-export async function login(req, res) {
-    await knex("users")
+export function login(req, res) {
+     knex("users")
         .select("*")
         .then(userArray => {
             for (let user of userArray) {
