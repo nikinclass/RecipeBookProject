@@ -53,7 +53,9 @@ export function login(req, res) {
   var opts = {
     maxAge: 900000,
     httpOnly: true,
-    sameSite: "strict",
+    sameSite: "None",
+    path: "/",
+    secure: false,
   };
   knex("users")
     .select("*")
@@ -65,6 +67,7 @@ export function login(req, res) {
         ) {
           console.log("Access Granted");
           res.cookie("email", req.body.email, opts);
+          console.log(res);
           return res.status(200).send();
         }
       }
