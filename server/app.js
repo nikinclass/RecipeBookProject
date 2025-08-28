@@ -60,16 +60,9 @@ app.get("/recipes/:id", (req, res) => {
 });
 
 app.post("/users", (req, res) => {
-  knex("users")
-    .select("*")
-    .then((userArray) => {
-      for (let user of userArray) {
-        if (req.body.email.toLowerCase() === user.email.toLowerCase()) {
-          res.status(401).send("User already exists");
-          console.log(req.headers["create-account"]);
-          return;
-        }
-      }
+    if (req.headers['create-account'] === 'false'){
+        return login(req, res)
+    }
       knex("users")
         .insert({
           name: "default",
@@ -81,7 +74,6 @@ app.post("/users", (req, res) => {
           if (err) console.log(err);
         });
       res.status(200);
-    });
 });
 
 module.exports = app.listen(port, () => {
