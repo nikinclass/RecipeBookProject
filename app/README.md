@@ -1,12 +1,33 @@
-# React + Vite
+# The Recipe Book
+This project is a easy to use recipe repository that allows you to find, save and leave notes and comments about recipes you like or dislike. The recipes are easy to find and clear, and it is not necessary to read the chef's life story to find the instructions on how to make each recipe.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## To write this web project we used the following languages and libraries:
+* React
+* Javascript
+* Nodeman
+* Vitest
+* Vite
+* Thank you to The Meal API https://www.themealdb.com/api.php
+* Postgres
+* Docker
 
-Currently, two official plugins are available:
+## Team Members
+Front End: Fernando Berry
+Front End: Drayson Orosco
+Front End: Nicole Gabor
+Back End: Alec Somers
+Back End: Alex Michael Burton
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Table of Contents
+Home Page
+Recipes
+Profile
+Search Fovorites
+Blog
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Instructions for Use
+1. Download the respository from [Link] (https://github.com/nikinclass/RecipeBookProject.git)
+2. Have docker installed
+3. Run command 'docker compose-up'
+4. Navigate to [Link] (http://localhost:5173/)
+5. Search up your favorite recipe, create a login, etc.
