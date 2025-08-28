@@ -53,11 +53,11 @@ export default function Recipes () {
           <h3 className="instructionsTitle">Instructions</h3>
           <p>{getInstructions(id, recipes[id], featured)}</p>
         </div>
-        <img className='ChefPic'
-        src='https://i.pinimg.com/564x/ae/31/62/ae316256daf28f5ed4a8be128d4c4ec7.jpg'
-        alt='Picture of Chef' />
-        <h3 className="userStory">User Story!</h3>
-        <p className="UserStoryDesc">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Excepturi ipsum dolor, quam sit doloremque, facere itaque est iure eius harum laudantium iste consequatur explicabo fugit quibusdam magni commodi amet officiis.</p>
+      <img className='ChefPic'
+      src='https://i.pinimg.com/564x/ae/31/62/ae316256daf28f5ed4a8be128d4c4ec7.jpg'
+      alt='Picture of Chef' />
+      <h3 className="userStory">User Story!</h3>
+      <p className="UserStoryDesc">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Excepturi ipsum dolor, quam sit doloremque, facere itaque est iure eius harum laudantium iste consequatur explicabo fugit quibusdam magni commodi amet officiis.</p>
     </div>
 
     <div className='reviews-section'>
