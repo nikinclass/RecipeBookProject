@@ -1,49 +1,51 @@
 import '../styles/Blog.css';
+import { useEffect, useState } from 'react';
+
 export default function Blog() {
+  const [posts, setPosts] = useState([]);
 
-return (
+  useEffect(() => {
+    fetch('http://localhost:8080/blog-posts')
+      .then(res => res.json())
+      .then(data => {
+        console.log('Posts from API:', data);  // debug log
+        setPosts(data);
+      })
+      .catch(err => console.error('Fetch error:', err));
+  }, []);
+
+  return (
     <div className="blog-page">
+      <div className="blog-header">
+        <h1 className="blog-title">Blog</h1>
+      </div>
 
-    <div className="BlogHeader">
-    <h1 className="BlogTitle"> Blog</h1>
-        <button className="PostButton" type="button">Post</button>
+      <div className="blog-content">
+        <div className="main-posts">
+          {posts.length === 0 ? (
+            <p>Loading posts...</p>
+          ) : (
+            posts.map(post => (
+              <article className="blog-post" key={post.id}>
+                <p><strong>ID:</strong> {post.id}</p>
+                <p><strong>User ID:</strong> {post.user_id}</p>
+                <h2 className="post-title">{post.title}</h2>
+                <p className="post-body">{post.body}</p>
+                <p className="post-rating">⭐ Rating: {post.rating} / 5</p>
+              </article>
+            ))
+          )}
+        </div>
+
+        <div className="sidebar">
+          <h3>Recent Posts</h3>
+          <ul>
+            {posts.slice(0, 6).map(post => (
+              <li key={post.id}>{post.title}</li>
+            ))}
+          </ul>
+        </div>
+      </div>
     </div>
-    
-    <div className="blog-content">
-
-    {/* main posts */}
-
-    <div className="mainPosts">
-        <article className="blog-post">
-            <h2 className="post-title">How to make Spaget</h2>
-            <img className="blogImg" 
-            src="https://www.inspiredtaste.net/wp-content/uploads/2019/03/Spaghetti-with-Meat-Sauce-Recipe-1-1200.jpg" 
-            alt="Spagetti Picture"/>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident vel magni blanditiis sunt! In atque consequatur eveniet reprehenderit commodi amet adipisci tempore neque beatae ut accusantium consectetur eaque, laborum sed.</p>
-        </article>
-
-        <article className="blog-post">
-        <h2 className="post-title">How to make Boa Buns</h2>
-        <img className="blogImg" src="https://breadtopia.com/wp-content/uploads/2022/09/20220831_132221-800x600.jpg" alt="Boa Buns"></img>
-        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eum culpa harum quidem, totam dicta consequuntur vel alias, fugit blanditiis cum deleniti praesentium. Optio fugiat vero obcaecati eligendi minus esse numquam.</p>
-        </article>
-    </div>
-
-    {/* side bar content */}
-
-    <aside className="sidebar">
-    <h3>Recent Posts</h3>
-    <ul>
-        <li>Alec's Recipie</li>
-        <li>Draysen's Recipie</li>
-        <li>Nikki's Recipie</li>
-        <li>Fernando's Recipie</li>
-        <li>Micha's Cake Recipie</li>
-        <li>Taco Recipie</li>
-    </ul>
-    </aside>
-
-    </div>
-</div>
-);
+  );
 }
