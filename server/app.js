@@ -1,4 +1,4 @@
-const { login } = require('./utils/helperFunctions.js')
+const { login, createAccount } = require('./utils/helperFunctions.js')
 const express = require("express");
 const app = express();
 const knex = require("knex")(require("./knexfile.js")["docker"]); //If testing endpoints, environment must be the 'test' environment from the knex file
@@ -62,18 +62,12 @@ app.get("/recipes/:id", (req, res) => {
 app.post("/users", (req, res) => {
     if (req.headers['create-account'] === 'false'){
         return login(req, res)
+    }else if (req.headers['create-account'] === 'true'){
+        return createAccount(req, res)
+    }else {
+        res.status(400).send("create-account header not specified")
     }
-      knex("users")
-        .insert({
-          name: "default",
-          email: req.body.email,
-          role: "admin",
-          password: req.body.password,
-        })
-        .catch((err) => {
-          if (err) console.log(err);
-        });
-      res.status(200);
+
 });
 
 module.exports = app.listen(port, () => {

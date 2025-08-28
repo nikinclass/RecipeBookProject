@@ -12,7 +12,7 @@ export default function Account() {
         console.log(e)
         const submitData = {
             email: e.target[0].value,
-            password: e.target[1].value,
+            password: createAccount ? e.target[2].value : e.target[1].value
         };
         const headers = {
             "Content-Type": "application/json",

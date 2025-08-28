@@ -27,7 +27,7 @@ export function randomFoodCategory() {
 }
 
 export function login(req, res) {
-     knex("users")
+    knex("users")
         .select("*")
         .then(userArray => {
             for (let user of userArray) {
@@ -42,5 +42,32 @@ export function login(req, res) {
         })
 
 }
+
+export function createAccount(req, res) {
+    knex('users')
+        .select("*")
+        .then(userArray => {
+            for (let user of userArray) {
+                if (req.body.email.toLowerCase() === user.email.toLowerCase() &&
+                    req.body.password.toLowerCase() === user.password.toLowerCase()) {
+                    console.log("Account already exists")
+                    return res.status(401).send("Account already exists")
+                }
+            }
+            knex("users")
+                .insert({
+                    name: "default",
+                    email: req.body.email,
+                    role: "admin",
+                    password: req.body.password,
+                })
+                .catch((err) => {
+                    if (err) console.log(err);
+                });
+            console.log("New User Added!")
+           return res.status(200);
+        })
+}
+
 
 
