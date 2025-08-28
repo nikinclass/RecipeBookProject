@@ -1,5 +1,5 @@
 # RecipeBookProject
-This application a way to let users view recipes up front without having to read someone's life story\
+This application is a way to let users view recipes up front without having to read someone's life story\
 
 # Backend 
 Instructions:\
