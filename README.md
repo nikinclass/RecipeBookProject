@@ -1,6 +1,6 @@
 # RecipeBookProject
 
-Backend Instructions:\n
+Backend Instructions:\
    -run the following commands in this order
      1. docker compose up
      2. cd /server
