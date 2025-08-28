@@ -18,7 +18,7 @@ function App() {
   const [featured, setFeatured] = useState(null);
 
   useEffect(() => {
-    fetch('http://localhost:8080/recipes') 
+    fetch('http://localhost:8080/recipes')
     .then(response => {
       if(response.status != 200) {
         throw new Error ('unable to fetch resources')
@@ -36,6 +36,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/recipes" element={<Recipes />} />
+          <Route path="/recipes/:id" element={<Recipes />} />
           <Route path="/profile" element={<Profile />} />
           <Route path="/search" element={<Search />} />
           <Route path="/favorites" element={<Favorites />} />
