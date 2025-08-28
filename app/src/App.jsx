@@ -13,7 +13,6 @@ import Navbar from '../components/Navbar.jsx'
 import Account from "../components/Account.jsx";
 
 function App() {
-  const [count, setCount] = useState(0);
   const [recipeList, setRecipeList] = useState([]);
   const [featured, setFeatured] = useState(null);
 

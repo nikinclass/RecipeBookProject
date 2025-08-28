@@ -8,16 +8,24 @@ export default function Home (){
   const [view, setView] = useState('default');
   const {recipes, featured, setFeatured} = useContext(AppContext);
 
-
   useEffect(() => {
     setFeatured(recipes[0])
   }, [recipes])
 
+  useEffect(()=>{
+    setView('default')
+  }, [])
+
   return (
     <div className='home'>
       <Sidebar setter={setView}/>
-      { featured ? <RecipeCard recipe={featured} isFeatured={true}/> : <></> }
-
+      { featured && view == 'default' ? <RecipeCard recipe={featured} isFeatured={true}/> : <></> }
+      { view != 'default' ?
+        (
+          recipes.filter(entry => entry.type_category == view)
+          .map(entry => <RecipeCard key={entry.name} recipe={entry} isFeatured={false} />)
+        ) : <></>
+      }
     </div>
   )
 };
