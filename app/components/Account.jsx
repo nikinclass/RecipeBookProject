@@ -29,7 +29,7 @@ export default function Account() {
                     setValidCredentials(false);
                 } else if (res.status == 200) {
                     setValidCredentials(true);
-                    // navigate('/');
+                    navigate('/');
                 }
             })
             .catch((err) => console.error(err));
