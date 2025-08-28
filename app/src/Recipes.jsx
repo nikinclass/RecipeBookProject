@@ -44,14 +44,14 @@ export default function Recipes () {
     <div className='recipes-container'>
 
       <div className='left section'>
-        <h1 className="recipesTitle">{getName(id, recipes[id], featured)}</h1>
-        <img className="recepieImg" src={getPicture(id, recipes[id], featured)} alt={getName(id, recipes[id], featured)}/>
+        <h1 className="recipesTitle">{getName(id, recipes, featured)}</h1>
+        <img className="recepieImg" src={getPicture(id, recipes, featured)} alt={getName(id, recipes, featured)}/>
       </div>
 
       <div className='right-section'>
         <div className='instructions-card'>
           <h3 className="instructionsTitle">Instructions</h3>
-          <p>{getInstructions(id, recipes[id], featured)}</p>
+          <p>{getInstructions(id, recipes, featured)}</p>
         </div>
       <img className='ChefPic'
       src='https://i.pinimg.com/564x/ae/31/62/ae316256daf28f5ed4a8be128d4c4ec7.jpg'

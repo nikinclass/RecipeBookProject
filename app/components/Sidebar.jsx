@@ -12,7 +12,7 @@ export default function Sidebar ({setter}) {
           <a onClick={() => {setter('lunch')}}>Lunch</a>
           <a onClick={() => {setter('dinner')}}>Dinner</a>
           <a onClick={() => {setter('dessert')}}>Dessert</a>
-          <a onClick={() => {setter('drinks')}}>Drinks</a>
+          <a onClick={() => {setter('drink')}}>Drinks</a>
         </nav>
       )}
       <div className='sidebar-collapse' onClick={() => {setIsOpen(!isOpen)}}>
