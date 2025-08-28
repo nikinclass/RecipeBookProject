@@ -16,7 +16,8 @@ exports.seed = async function (knex) {
         description: "This oddly formulated Spaget originates from the mountain ranges of Washington State",
         cultural_category: "Draysen",
         type_category: "breakfast",
-        picture_url: '../img/spaget.png'
+        picture_url: './images/DraysensSpaget.png',
+        instructions: "Add poptarts, one pound of salt, and slam it into a card door, you will be left with pure perfection"
 
     })
     const mealArray = await getAllRecipes();
