@@ -20,8 +20,12 @@ export default function Home (){
     <div className='home'>
       <Sidebar setter={setView}/>
       { featured && view == 'default' ? <RecipeCard recipe={featured} isFeatured={true}/> : <></> }
-      { view != 'default' ? (<></>) : <></> }
-
+      { view != 'default' ?
+        (
+          recipes.filter(entry => entry.type_category == view)
+          .map(entry => <RecipeCard key={entry.name} recipe={entry} isFeatured={false} />)
+        ) : <></>
+      }
     </div>
   )
 };
