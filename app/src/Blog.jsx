@@ -27,8 +27,6 @@ export default function Blog() {
           ) : (
             posts.map(post => (
               <article className="blog-post" key={post.id}>
-                <p><strong>ID:</strong> {post.id}</p>
-                <p><strong>User ID:</strong> {post.user_id}</p>
                 <h2 className="post-title">{post.title}</h2>
                 <p className="post-body">{post.body}</p>
                 <p className="post-rating">⭐ Rating: {post.rating} / 5</p>
