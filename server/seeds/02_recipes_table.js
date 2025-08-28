@@ -11,6 +11,14 @@ const {faker} = require('@faker-js/faker')
 exports.seed = async function (knex) {
     // Deletes ALL existing entries
     await knex('recipes').del()
+    await knex('recipes').insert({
+        name: "Draysen's Spaget",
+        description: "This oddly formulated Spaget originates from the mountain ranges of Washington State",
+        cultural_category: "Draysen",
+        type_category: "breakfast",
+        picture_url: '../img/spaget.png'
+
+    })
     const mealArray = await getAllRecipes();
 
     for (let i = 0; i < mealArray.length; i++) {
