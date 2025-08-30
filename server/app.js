@@ -4,8 +4,7 @@ const app = express();
 const knex = require("knex")(require("./knexfile.js")["docker"]); //If testing endpoints, environment must be the 'test' environment from the knex file
 const port = 8080;
 const cors = require("cors");
-const corsOptions = {credentials: true};
-app.use(cors(corsOptions));
+app.use(cors());
 app.use(express.json());
 
 app.get("/", (req, res) => {
